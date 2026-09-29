@@ -20,7 +20,8 @@ JOBS = [
     ("portrait-sit", "IMG_5127", 1100, None, False),
     ("portrait-col", "IMG_5133", 1100, None, False),
     ("podium",       "IMG_5125", 1200, None, False),
-    ("speaking",     "IMG_5161", 1500, None, False),
+    # 5161 is a screenshot of a web page — crop away the white surround and the caption
+    ("speaking",     "IMG_5161", 1500, (0.038, 0.022, 0.962, 0.652), False),
     ("panel-ifrc",   "IMG_5126", 1500, None, False),
     ("who-tedros",   "IMG_5142", 1500, None, False),
     ("pioneers",     "IMG_5139", 1500, None, False),

@@ -541,7 +541,7 @@ def speaking():
 
     body = f"""
   <section class="pagehead pagehead--img">
-    <img src="img/riyadh.jpg" alt="" loading="lazy">
+    <img src="img/speaking.jpg" alt="" loading="lazy">
     <div class="wrap">
       <p class="eyebrow">Speaking</p>
       <h1 class="pagehead__title">Six things worth<br>an <em>hour of a room</em></h1>

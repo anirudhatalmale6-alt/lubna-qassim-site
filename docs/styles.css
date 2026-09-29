@@ -149,7 +149,7 @@ body::after{content:"";position:fixed;inset:0;z-index:9;pointer-events:none;opac
 .pagehead--img{overflow:hidden;color:#F6F2EA;padding-top:clamp(90px,14vw,190px);
   padding-bottom:clamp(50px,7vw,90px)}
 .pagehead--img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  object-position:50% 46%;filter:var(--photo) brightness(.46);z-index:0}
+  object-position:50% 32%;filter:var(--photo) brightness(.46);z-index:0}
 .pagehead--img .wrap{position:relative;z-index:1}
 .pagehead--img .eyebrow{color:rgba(246,242,234,.7)}
 .pagehead--img .pagehead__title em{color:#E8C89A}
