@@ -30,6 +30,13 @@ JOBS = [
     ("students",     "IMG_5136", 1500, None, False),
     ("book-peace",   "IMG_5171", 900,  None, False),
     ("book-multi",   "IMG_5172", 900,  None, False),
+
+    # Peace diplomacy & interfaith dialogue (new section, 29-sep)
+    ("peace-signing",  "IMG_5276", 1400, None, False),
+    ("peace-doctorate","IMG_5275", 1200, None, False),
+    ("peace-books",    "IMG_5270", 1400, None, False),
+    ("peace-disarm",   "IMG_5274", 1500, None, False),
+    ("peace-courtyard","IMG_5271", 1500, None, False),
 ]
 
 

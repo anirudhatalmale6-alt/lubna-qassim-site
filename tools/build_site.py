@@ -41,7 +41,7 @@ def page(fname, title, body, desc, cls="", depth=0):
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Mrs+Saint+Delafield&family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;1,6..72,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Alex+Brush&family=Allura&family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;1,6..72,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{up}styles.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%2317150f'/><text x='50' y='68' font-family='Georgia,serif' font-size='44' fill='%23f5f2eb' text-anchor='middle'>LQ</text></svg>">
 <script>document.documentElement.classList.add('js')</script>
@@ -155,6 +155,15 @@ AREAS = [
       "Returning to leadership after career transitions",
       "Mentorship and sponsorship",
       "Gender diversity as a governance and business issue"]),
+    # fifth area added at her request, 29-sep
+    ("Peace Diplomacy &amp; Interfaith Dialogue",
+     "Dialogue between states, faiths and institutions",
+     ["Multilateral peacebuilding and preventive diplomacy",
+      "Interfaith and intercultural dialogue",
+      "Women's participation in peace processes",
+      "Humanitarian engagement and the institutions that carry it",
+      "Convening across governments, faith leaders and international organisations",
+      "Education and dialogue as instruments of stability"]),
 ]
 
 THEMES = [
@@ -197,9 +206,11 @@ RECOGNITION = [
     ("Founding Member, 30% Club GCC Chapter",
      "Advancing women's representation on boards and in senior leadership across the Gulf.",
      "", None),
+    # caption corrected at her instruction: she was interviewed and contributed to the
+    # research — she was not "recognised by" an individual
     ("Balance for Better",
-     "With the Dubai Business Women Council and the United Nations, recognised by "
-     "Professor Payyazhi Jayashree.", "", "balance"),
+     "Contributor and interviewee to the research on gender parity and better balance, "
+     "with the Dubai Business Women Council and the United Nations.", "", "balance"),
 ]
 
 GALLERY = [
@@ -244,6 +255,16 @@ ESSAYS = [
 ]
 
 PRESS = [
+    ("2026", "Leading the UN in a World That Has Already Changed",
+     "Modern Diplomacy · 26 June 2026",
+     "https://moderndiplomacy.eu/2026/06/26/leading-the-un-in-a-world-that-has-already-changed/"),
+    ("2026", "The New Calculus of Global Investment",
+     "ITT Nexus · 3 September 2026", "https://ittnexus.com/the-new-calculus"),
+    ("2026", "How Merchant States Are Reshaping Global Business Connectivity",
+     "The Business Times, Singapore",
+     "https://www.businesstimes.com.sg/opinion-features/how-merchant-states-are-reshaping-global-business-connectivity"),
+    ("2026", "New Age Chokepoints", "The Business Times, Singapore",
+     "https://www.businesstimes.com.sg/opinion-features/new-age-chokepoints"),
     ("2026", "Law, Power and the Limits of Institutions",
      "The International Wire · interview by Danish Shaikh",
      "https://theinternationalwire.com/law-power-and-the-limits-of-institutions/"),
@@ -259,6 +280,11 @@ PRESS = [
     ("", "Incentivising change: ten guidelines for MENA women",
      "Entrepreneur Middle East",
      "https://mena.entrepreneur.com/growth-strategies/incentivizing-change-10-guidelines-for-mena-women-in/295335"),
+    ("", "Female appointments to key positions show KSA commitment to modernisation",
+     "Arab News",
+     "https://www.arabnews.com/business/female-appointments-to-key-positions-show-ksa-commitment-to-modernization-says-uaes-lubna-qassim-1126956"),
+    ("", "My UAE: Lubna Qassim on her varied legal and political career", "The National",
+     "https://www.thenationalnews.com/arts-culture/my-uae-lubna-qassim-on-her-varied-legal-and-political-career-1.76496"),
     ("", "Inspiring Women", "Al Shindagah",
      "http://www.alshindagah.com/en/article/en-us/13/13/29/24/463/inspiring-women-lubna-qassim"),
     ("", "Women Matter: ten years of insights on gender diversity",
@@ -278,8 +304,8 @@ BOOKS = [
 ]
 
 GLANCE = [
-    ("Present", "Distinguished Fellow, UCLA Center for Middle East Development (CMED)"),
-    ("Present", "Governor, Board of Governors, Helsinki Geoeconomics Society"),
+    # Helsinki removed at her instruction (29-sep). Do not reinstate.
+    ("Present", "Distinguished Fellow, UCLA Center for Middle East Development"),
     ("2019 – 2024", "Deputy Permanent Representative and Chargé d'Affaires of the UAE to the "
                     "United Nations and International Organizations, Geneva"),
     ("2018", "Minister Plenipotentiary of the First Degree and Senior Legal Counsel to the "
@@ -295,11 +321,7 @@ GLANCE = [
 # ───────────────────────────── pages ─────────────────────────────
 
 def home():
-    chairs = "\n".join(f"""
-        <article class="chair reveal">
-          <h3>{n}</h3>
-          <p>{d}</p>
-        </article>""" for n, d in CHAIRS)
+    chart = open(os.path.join(OUT, "chart.svg.html")).read()
 
     doors = """
       <a class="door reveal" href="profile.html">
@@ -327,29 +349,23 @@ def home():
   <section class="hero">
     <img class="hero__bg" src="img/chamber.jpg" alt="" fetchpriority="high">
     <div class="hero__inner wrap">
-      <p class="eyebrow eyebrow--light">Distinguished Fellow, UCLA Center for Middle East Development</p>
       <h1 class="hero__name"><span>Lubna</span> <em>Qassim</em></h1>
       <p class="hero__line">Working at the intersection of law, government,
         business and diplomacy.</p>
-      <div class="hero__cta">
-        <a class="btn btn--solid" href="contact.html">Speaking &amp; advisory enquiries</a>
-        <a class="link-arrow link-arrow--light" href="profile.html">Read the profile</a>
-      </div>
+      <a class="link-arrow link-arrow--light" href="profile.html">Read the profile</a>
     </div>
     <span class="scrollcue"><i></i>Scroll</span>
   </section>
 
   <section class="section section--chairs">
+    <div class="chart-wrap">{chart}</div>
     <div class="wrap">
       <div class="chairs__head">
         <h2 class="bigmarks"><span>Law.</span> <span>Government.</span>
           <span>Business.</span> <span>Diplomacy.</span></h2>
-        <p class="chairs__lede">Four sides of the same table. Most careers see one of them.
-          The argument of this site is not that she has held a number of posts, but that the
-          same questions look entirely different depending on which chair you are sitting in —
-          and that having sat in all four is the whole of the value.</p>
+        <p class="chairs__lede">Four sides of the same table — and the same questions look
+          entirely different depending on which chair you are sitting in.</p>
       </div>
-      <div class="chairs">{chairs}</div>
     </div>
   </section>
 
@@ -460,12 +476,6 @@ def profile():
               across the international system.</p>
             </blockquote>
 
-            <p>Her particular value lies in connecting national and philanthropic ambition with the
-            wider international ecosystem: engaging senior government and institutional
-            stakeholders, building trusted global partnerships, strengthening governance and
-            strategy, and helping translate vision into initiatives with international reach and
-            enduring impact.</p>
-
             <div class="signoff">
               <span class="signoff__mark">Lubna Qassim</span>
             </div>
@@ -516,6 +526,19 @@ def contribution():
   <section class="section section--tight">
     <div class="wrap">
       <ol class="areas">{items}</ol>
+    </div>
+  </section>
+
+  <section class="section section--paper">
+    <div class="wrap">
+      <p class="eyebrow">Peace diplomacy &amp; interfaith dialogue</p>
+      <div class="peacestrip">
+        <figure><img src="img/peace-signing.jpg" alt="" loading="lazy"></figure>
+        <figure><img src="img/peace-disarm.jpg" alt="" loading="lazy"></figure>
+        <figure><img src="img/peace-books.jpg" alt="" loading="lazy"></figure>
+        <figure><img src="img/peace-courtyard.jpg" alt="" loading="lazy"></figure>
+      </div>
+      <p class="peacestrip__note">Captions, dates and venues to be confirmed.</p>
     </div>
   </section>
 

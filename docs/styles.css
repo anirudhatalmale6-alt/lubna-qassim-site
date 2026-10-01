@@ -111,11 +111,11 @@ body::after{content:"";position:fixed;inset:0;z-index:9;pointer-events:none;opac
 .hero{position:relative;min-height:calc(100svh - 108px);display:flex;flex-direction:column;
   justify-content:flex-end;overflow:hidden;padding-block:clamp(60px,10vh,120px)}
 .hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  filter:var(--photo) brightness(.52) contrast(1.06);z-index:0}
+  filter:var(--photo) brightness(.78) contrast(1.02);z-index:0}
 .hero::after{content:"";position:absolute;inset:0;z-index:1;
   background:
-    linear-gradient(190deg,rgba(15,14,10,.5) 0%,rgba(15,14,10,.1) 36%,rgba(15,14,10,.8) 100%),
-    linear-gradient(95deg,rgba(15,14,10,.72) 0%,rgba(15,14,10,.34) 40%,rgba(15,14,10,0) 68%)}
+    linear-gradient(190deg,rgba(15,14,10,.38) 0%,rgba(15,14,10,.04) 34%,rgba(15,14,10,.62) 100%),
+    linear-gradient(95deg,rgba(15,14,10,.66) 0%,rgba(15,14,10,.2) 42%,rgba(15,14,10,0) 70%)}
 .hero__inner{position:relative;z-index:2;color:#F6F2EA;width:100%}
 /* stacked, so the name never crosses the subject's face */
 .hero__name{font-family:var(--ff-display);font-weight:400;
@@ -123,7 +123,7 @@ body::after{content:"";position:fixed;inset:0;z-index:9;pointer-events:none;opac
 .hero__name span,.hero__name em{display:block}
 .hero__name em{font-style:italic;color:#E8C89A;padding-left:.06em}
 .hero__line{font-family:var(--ff-display);font-size:clamp(1.15rem,2.4vw,2rem);line-height:1.28;
-  max-width:24ch;letter-spacing:-.01em;color:#F0EBE1}
+  max-width:24ch;letter-spacing:-.01em;color:#F0EBE1;margin-bottom:clamp(26px,4vh,42px)}
 .hero__cta{display:flex;flex-wrap:wrap;align-items:center;gap:26px;margin-top:clamp(28px,4vh,44px)}
 .hero .scrollcue{position:absolute;right:var(--gutter);bottom:26px;z-index:2;
   font-family:var(--ff-ui);font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;
@@ -178,6 +178,40 @@ body::after{content:"";position:fixed;inset:0;z-index:9;pointer-events:none;opac
 }
 @media (max-width:560px){.chairs{grid-template-columns:1fr}}
 
+/* ---------- navigator's chart, behind the four marks ---------- */
+.section--chairs{position:relative;overflow:hidden}
+.section--chairs .wrap{position:relative;z-index:1}
+.chart-wrap{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;opacity:.5;
+  -webkit-mask-image:radial-gradient(96% 110% at 70% 42%,#000 8%,transparent 74%);
+  mask-image:radial-gradient(96% 110% at 70% 42%,#000 8%,transparent 74%)}
+.chart{width:100%;height:100%;display:block;color:var(--ink)}
+.chart line,.chart circle,.chart path,.chart polygon{fill:none;stroke:currentColor;
+  vector-effect:non-scaling-stroke}
+.chart text{stroke:none;fill:currentColor}
+.chart__grid line{stroke-width:.6;opacity:.11}
+.chart__ref line{stroke-width:.9;opacity:.17}
+.chart__rhumb line{stroke-width:.5;opacity:.07}
+.chart__rose circle{stroke-width:.7;opacity:.15}
+.chart__rose polygon{fill:currentColor;stroke:none;opacity:.09}
+.chart__route path{stroke:var(--accent);stroke-width:1.1;opacity:.32;stroke-dasharray:3 5}
+.chart__halo{stroke:var(--accent);stroke-width:.8;opacity:.28}
+.chart__dot{fill:var(--accent);stroke:none;opacity:.6}
+.chart__name{font-family:var(--ff-ui);font-size:9.5px;letter-spacing:.2em;opacity:.3}
+.chart__coord{font-family:var(--ff-ui);font-size:7.5px;letter-spacing:.1em;opacity:.18}
+@media (max-width:760px){
+  .chart__coord{display:none}
+  .chart-wrap{-webkit-mask-image:radial-gradient(150% 80% at 55% 40%,#000 6%,transparent 74%);
+    mask-image:radial-gradient(150% 80% at 55% 40%,#000 6%,transparent 74%)}
+}
+
+/* ---------- peace diplomacy strip ---------- */
+.peacestrip{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.6vw,22px);
+  margin-top:26px}
+.peacestrip img{width:100%;aspect-ratio:4/3;object-fit:cover;filter:var(--photo)}
+.peacestrip__note{font-family:var(--ff-ui);font-size:.58rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--muted);margin-top:18px}
+@media (max-width:760px){.peacestrip{grid-template-columns:1fr 1fr}}
+
 /* ---------- statement ---------- */
 .statement{text-align:center}
 /* the measure must be set on the element that carries the large font-size —
@@ -231,8 +265,8 @@ body::after{content:"";position:fixed;inset:0;z-index:9;pointer-events:none;opac
 .letter::before{content:"";position:absolute;left:clamp(11px,1.3vw,20px);top:0;bottom:0;width:1px;
   background:var(--accent);opacity:.22}
 .signoff{margin-top:36px;padding-top:24px;border-top:1px solid var(--rule)}
-.signoff__mark{font-family:'Mrs Saint Delafield',cursive;
-  font-size:clamp(2.6rem,5.4vw,3.6rem);line-height:.86;opacity:.92}
+.signoff__mark{font-family:'Alex Brush',cursive;
+  font-size:clamp(2.5rem,5vw,3.4rem);line-height:.9;opacity:.92}
 
 .glance{border-top:1px solid var(--rule);max-width:none;margin-top:24px}
 .glance li{display:grid;grid-template-columns:130px 1fr;gap:clamp(16px,3vw,40px);
@@ -243,7 +277,7 @@ body::after{content:"";position:fixed;inset:0;z-index:9;pointer-events:none;opac
 @media (max-width:1080px){
   .colset{grid-template-columns:1fr}
   .colset__label{position:static}
-  .sidefig{max-width:340px}
+  .sidefig{max-width:min(300px,62%)}
 }
 @media (max-width:560px){
   .glance li{grid-template-columns:1fr;gap:5px}
