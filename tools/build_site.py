@@ -232,12 +232,12 @@ GALLERY = [
 ESSAYS = [
     ("bankruptcy-laws", "For the country's prosperity, better bankruptcy laws",
      "26 August 2009", "The National",
-     "Written sixteen years before the UAE's insolvency framework was rebuilt: why a country "
-     "that wants to be a financial centre needs a rescue culture, not a stigma."),
+     "Written years before the UAE introduced a federal insolvency law: why a country that "
+     "wants to be a financial centre needs a rescue culture rather than a stigma."),
     ("leaders-vision", "Our leaders had a vision: today it is our reality",
      "11 January 2009", "The National",
-     "On the fortieth anniversary years of a young federation — what it takes to build a nation "
-     "on vision and trust, and what the UAE has to teach about growth."),
+     "Written for the UAE's 37th National Day — what it takes to build a nation on vision "
+     "and trust, and what the country has to teach about growth."),
     ("jobs-for-emiratis", "Jobs for Emiratis: why the state can't do it all",
      "23 June 2009", "The National",
      "Employment, the private sector and the limits of what government can be asked to carry."),
@@ -254,46 +254,69 @@ ESSAYS = [
      "On reading, education and the long work of building a literate society."),
 ]
 
-PRESS = [
+# Titles below are the EXACT published headlines, checked against each original page on
+# 2 Oct 2026 — several had previously been tidied from the web address, which was wrong.
+# Entries marked unverified could not be read (paywall or the publisher blocks fetching)
+# and are awaiting her confirmation rather than being guessed at.
+# (year, exact title, outlet line, url, by_her, unverified)
+BYLINES = [
     ("2026", "Leading the UN in a World That Has Already Changed",
      "Modern Diplomacy · 26 June 2026",
-     "https://moderndiplomacy.eu/2026/06/26/leading-the-un-in-a-world-that-has-already-changed/"),
+     "https://moderndiplomacy.eu/2026/06/26/leading-the-un-in-a-world-that-has-already-changed/",
+     True, False),
     ("2026", "The New Calculus of Global Investment",
-     "ITT Nexus · 3 September 2026", "https://ittnexus.com/the-new-calculus"),
+     "ITT Nexus · 3 September 2026", "https://ittnexus.com/the-new-calculus", True, False),
     ("2026", "How Merchant States Are Reshaping Global Business Connectivity",
      "The Business Times, Singapore",
-     "https://www.businesstimes.com.sg/opinion-features/how-merchant-states-are-reshaping-global-business-connectivity"),
+     "https://www.businesstimes.com.sg/opinion-features/how-merchant-states-are-reshaping-global-business-connectivity",
+     True, True),
     ("2026", "New Age Chokepoints", "The Business Times, Singapore",
-     "https://www.businesstimes.com.sg/opinion-features/new-age-chokepoints"),
-    ("2026", "Law, Power and the Limits of Institutions",
-     "The International Wire · interview by Danish Shaikh",
-     "https://theinternationalwire.com/law-power-and-the-limits-of-institutions/"),
-    ("2013", "Why I experienced discrimination as a public leader in the UAE",
-     "The Guardian · Public Leaders Network",
-     "https://www.theguardian.com/public-leaders-network/2013/nov/20/uae-public-leader-discrimination-experience"),
-    ("", "Breaking barriers", "The Legal 500 · GC Magazine",
-     "https://www.legal500.com/gc-magazine/interview/breaking-barriers-lubna-qassim/"),
-    ("", "Legal visionary: a journey from boardrooms to global diplomacy", "Corporate Counsel Now",
-     "https://corporatecounselnow.com/legal-visionary-lubna-qassims-journey-boardrooms-global-diplomacy"),
+     "https://www.businesstimes.com.sg/opinion-features/new-age-chokepoints", True, True),
+]
+
+PRESS = [
+    ("2026", "Law, Power, and the Limits of Institutions: "
+             "A Conversation on Governance in a Fragmenting World",
+     "The International Wire · interview by Danish Shaikh · 6 February 2026",
+     "https://theinternationalwire.com/law-power-and-the-limits-of-institutions/", False, False),
+    ("2025", "Legal Visionary: Lubna Qassim's Journey from Boardrooms to Global Diplomacy",
+     "Corporate Counsel Now · Association of Corporate Counsel · 4 September 2025",
+     "https://corporatecounselnow.com/legal-visionary-lubna-qassims-journey-boardrooms-global-diplomacy",
+     False, False),
     ("2018", "Arab Women 45", "Arabian Business",
-     "https://www.arabianbusiness.com/lists/391053-2018-arab-women45lubna-qassim"),
-    ("", "Incentivising change: ten guidelines for MENA women",
-     "Entrepreneur Middle East",
-     "https://mena.entrepreneur.com/growth-strategies/incentivizing-change-10-guidelines-for-mena-women-in/295335"),
-    ("", "Female appointments to key positions show KSA commitment to modernisation",
-     "Arab News",
-     "https://www.arabnews.com/business/female-appointments-to-key-positions-show-ksa-commitment-to-modernization-says-uaes-lubna-qassim-1126956"),
-    ("", "My UAE: Lubna Qassim on her varied legal and political career", "The National",
-     "https://www.thenationalnews.com/arts-culture/my-uae-lubna-qassim-on-her-varied-legal-and-political-career-1.76496"),
-    ("", "Inspiring Women", "Al Shindagah",
-     "http://www.alshindagah.com/en/article/en-us/13/13/29/24/463/inspiring-women-lubna-qassim"),
-    ("", "Women Matter: ten years of insights on gender diversity",
+     "https://www.arabianbusiness.com/lists/391053-2018-arab-women45lubna-qassim", False, True),
+    ("2017", "Female appointments to key positions show KSA commitment to modernization, "
+             "says UAE's Lubna Qassim",
+     "Arab News · 10 July 2017",
+     "https://www.arabnews.com/business/female-appointments-to-key-positions-show-ksa-commitment-to-modernization-says-uaes-lubna-qassim-1126956",
+     False, False),
+    ("2017", "Incentivizing Change: 10 Guidelines For MENA Women In Business",
+     "Entrepreneur Middle East · Soukaina Rachidi Alaoui · 6 June 2017",
+     "https://mena.entrepreneur.com/growth-strategies/incentivizing-change-10-guidelines-for-mena-women-in/295335",
+     False, False),
+    ("2017", "My UAE: Lubna Qassim on her varied legal and political career",
+     "The National · Jessica Hill · 18 May 2017",
+     "https://www.thenationalnews.com/arts-culture/my-uae-lubna-qassim-on-her-varied-legal-and-political-career-1.76496",
+     False, False),
+    ("2013", "The Guardian, Public Leaders Network",
+     "Exact headline to be confirmed",
+     "https://www.theguardian.com/public-leaders-network/2013/nov/20/uae-public-leader-discrimination-experience",
+     False, True),
+    ("", "Breaking barriers: Lubna Qassim",
+     "The Legal 500 · GC Magazine · Advice To My Younger Self: "
+     "Reflections of Successful Women Lawyers",
+     "https://www.legal500.com/gc-magazine/interview/breaking-barriers-lubna-qassim/", False, False),
+    ("", "Inspiring Women: Lubna Qassim", "Al Shindagah · Charlotte Kan",
+     "http://www.alshindagah.com/en/article/en-us/13/13/29/24/463/inspiring-women-lubna-qassim",
+     False, False),
+    ("", "Women Matter: Ten years of insights on gender diversity",
      "McKinsey &amp; Company · cited alongside Christine Lagarde",
-     "https://www.mckinsey.com/featured-insights/gender-equality/women-matter-ten-years-of-insights-on-gender-diversity"),
+     "https://www.mckinsey.com/featured-insights/gender-equality/women-matter-ten-years-of-insights-on-gender-diversity",
+     False, False),
     ("", "30% Club — MENA chapter", "30% Club",
-     "https://30percentclub.org/wp-content/uploads/2021/09/mena.html"),
+     "https://30percentclub.org/wp-content/uploads/2021/09/mena.html", False, False),
     ("", "British Chamber of Commerce Dubai", "British Chamber Dubai",
-     "https://britishchamberdubai.com/news-details/936"),
+     "https://britishchamberdubai.com/news-details/936", False, False),
 ]
 
 BOOKS = [
@@ -619,13 +642,17 @@ def writing():
         <span>{pub}</span>
       </li>""" for slug, title, date, pub, note in ESSAYS)
 
-    press = "\n".join(f"""
+    def press_rows(rows):
+        return "\n".join(f"""
       <li class="press">
         <i>{year}</i>
         <div><h3><a href="{url}" rel="noopener" target="_blank">{title}</a></h3>
-        <p>{outlet}</p></div>
+        <p>{outlet}{' <b class="tocheck">title to confirm</b>' if unver else ''}</p></div>
         <span aria-hidden="true">&#8599;</span>
-      </li>""" for year, title, outlet, url in PRESS)
+      </li>""" for year, title, outlet, url, _mine, unver in rows)
+
+    bylines = press_rows(BYLINES)
+    press = press_rows(PRESS)
 
     body = f"""
   <section class="pagehead">
@@ -646,14 +673,23 @@ def writing():
     <div class="wrap">
       <p class="eyebrow">Essays</p>
       <p class="lede">Written for <i>The National</i> between 2008 and 2009, and published here in
-        full. Several of them argued for reforms that arrived years later.</p>
+        full, each dated as it first appeared.</p>
       <ul class="essays">{essays}</ul>
     </div>
   </section>
 
   <section class="section section--tight">
     <div class="wrap">
+      <p class="eyebrow">Recent commentary</p>
+      <p class="lede">Published under her own byline.</p>
+      <ul class="presslist">{bylines}</ul>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="wrap">
       <p class="eyebrow">Interviews &amp; press</p>
+      <p class="lede">Written about her, or carrying her contribution.</p>
       <ul class="presslist">{press}</ul>
     </div>
   </section>

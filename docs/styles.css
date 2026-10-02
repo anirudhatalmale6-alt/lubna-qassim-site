@@ -494,3 +494,8 @@ body::after{content:"";position:fixed;inset:0;z-index:9;pointer-events:none;opac
   html{scroll-behavior:auto}
   .js .reveal{opacity:1;transform:none}
 }
+
+/* draft-only marker for facts still awaiting the client's confirmation */
+.tocheck{font-family:var(--ff-ui);font-weight:500;font-size:.54rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);
+  padding:3px 7px;margin-left:10px;white-space:nowrap;vertical-align:middle}
