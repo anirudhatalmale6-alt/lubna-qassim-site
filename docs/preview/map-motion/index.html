@@ -19,7 +19,7 @@ button.replay{position:absolute;right:12px;bottom:12px;font-family:'Archivo';fon
  background:rgba(245,242,235,.9);color:#17150F;border:1px solid rgba(23,21,15,.25);padding:8px 12px;cursor:pointer}
 
 /* ---------- INK: the site's own colours ---------- */
-.ink .bg{fill:#F5F2EB}.ink .land{fill:#E9E3D6}.ink .coast{fill:none;stroke:#B9AF9C;stroke-width:1.1;stroke-linejoin:round}
+.ink .bg{fill:#F5F2EB}.ink .land{fill:#E4DCCB}.ink .coast{fill:none;stroke:#5E5444;stroke-width:1.5;stroke-linejoin:round}
 .ink .route{stroke:#7B2D28}.ink .arrow{fill:#7B2D28}.ink .dot{fill:#7B2D28}.ink .ring,.ink .ripple{stroke:#7B2D28}
 .ink .g0{stop-color:#C0614F;stop-opacity:.55}.ink .g1{stop-color:#C0614F;stop-opacity:0}
 .ink .lbl{font-family:'Archivo',sans-serif;font-size:25px;letter-spacing:3px;text-transform:uppercase;fill:#4B4539;
@@ -87,8 +87,8 @@ button.replay{position:absolute;right:12px;bottom:12px;font-family:'Archivo';fon
 </defs></svg><div class="wrap">
 <div class="eyebrow">For discussion · Map in motion · 16 October 2026 · revised</div>
 <h1>The map, moving</h1>
-<p class="intro">Ink, as you chose, with countries instead of cities: USA, UK, Switzerland, UAE and Singapore. Each route draws itself with a small arrow travelling along it, and each country lights up as the arrow arrives, then keeps a slow, gentle glow. It plays once when the map scrolls into view.</p>
-<section><div class="frame"><svg viewBox="0 0 2400 1013" class="map ink" role="img" aria-label="Map: USA, UK, Switzerland, UAE, Singapore"><defs><radialGradient id="vig" cx="50%" cy="48%" r="72%">
+<p class="intro">Ink, with your cities: Los Angeles, London, Geneva, Abu Dhabi, Dubai and Singapore, and darker coastlines. Each route draws itself with a small arrow travelling along it, and each city lights up as the arrow arrives, then keeps a slow, gentle glow. It plays once when the map scrolls into view.</p>
+<section><div class="frame"><svg viewBox="0 0 2400 1013" class="map ink" role="img" aria-label="Map: Los Angeles, London, Geneva, Abu Dhabi, Dubai, Singapore"><defs><radialGradient id="vig" cx="50%" cy="48%" r="72%">
   <stop offset="48%" stop-color="#5a2008" stop-opacity="0"/>
   <stop offset="100%" stop-color="#5a2008" stop-opacity="0.66"/></radialGradient><radialGradient id="ig"><stop offset="0" class="g0"/><stop offset="1" class="g1"/></radialGradient></defs><rect width="100%" height="100%" class="bg"/>
 <g clip-path="url(#globe)">
@@ -99,16 +99,19 @@ button.replay{position:absolute;right:12px;bottom:12px;font-family:'Archivo';fon
 <path d="M-9,-7 L9,0 L-9,7 L-4,0 Z" class="arrow" style="--i:0;offset-path:path('M498.9,322.5 Q866.7,357.8 1199.3,197.0')"/>
 <path id="ir1" d="M1199.3,197.0 Q1228.1,205.2 1234.5,234.5" class="route" pathLength="1" style="--i:1"/>
 <path d="M-9,-7 L9,0 L-9,7 L-4,0 Z" class="arrow" style="--i:1;offset-path:path('M1199.3,197.0 Q1228.1,205.2 1234.5,234.5')"/>
-<path id="ir2" d="M1234.5,234.5 Q1409.2,264.2 1534.2,389.9" class="route" pathLength="1" style="--i:2"/>
-<path d="M-9,-7 L9,0 L-9,7 L-4,0 Z" class="arrow" style="--i:2;offset-path:path('M1234.5,234.5 Q1409.2,264.2 1534.2,389.9')"/>
-<path id="ir3" d="M1534.2,389.9 Q1720.3,424.6 1851.7,560.9" class="route" pathLength="1" style="--i:3"/>
-<path d="M-9,-7 L9,0 L-9,7 L-4,0 Z" class="arrow" style="--i:3;offset-path:path('M1534.2,389.9 Q1720.3,424.6 1851.7,560.9')"/>
-<g class="dest" style="--k:0"><circle cx="498.9" cy="322.5" r="26" class="glow" fill="url(#ig)"/><circle cx="498.9" cy="322.5" r="12" class="ripple"/><circle cx="498.9" cy="322.5" r="12" class="ring"/><circle cx="498.9" cy="322.5" r="5.5" class="dot"/><text x="498.9" y="292.5" text-anchor="middle" class="lbl">USA</text></g>
-<g class="dest" style="--k:1"><circle cx="1199.3" cy="197.0" r="26" class="glow" fill="url(#ig)"/><circle cx="1199.3" cy="197.0" r="12" class="ripple"/><circle cx="1199.3" cy="197.0" r="12" class="ring"/><circle cx="1199.3" cy="197.0" r="5.5" class="dot"/><text x="1177.3" y="183.0" text-anchor="end" class="lbl">UK</text></g>
-<g class="dest" style="--k:2"><circle cx="1234.5" cy="234.5" r="26" class="glow" fill="url(#ig)"/><circle cx="1234.5" cy="234.5" r="12" class="ripple"/><circle cx="1234.5" cy="234.5" r="12" class="ring"/><circle cx="1234.5" cy="234.5" r="5.5" class="dot"/><text x="1258.5" y="264.5" text-anchor="start" class="lbl">Switzerland</text></g>
-<g class="dest" style="--k:3"><circle cx="1534.2" cy="389.9" r="26" class="glow" fill="url(#ig)"/><circle cx="1534.2" cy="389.9" r="12" class="ripple"/><circle cx="1534.2" cy="389.9" r="12" class="ring"/><circle cx="1534.2" cy="389.9" r="5.5" class="dot"/><text x="1560.2" y="419.9" text-anchor="start" class="lbl">UAE</text></g>
-<g class="dest" style="--k:4"><circle cx="1851.7" cy="560.9" r="26" class="glow" fill="url(#ig)"/><circle cx="1851.7" cy="560.9" r="12" class="ripple"/><circle cx="1851.7" cy="560.9" r="12" class="ring"/><circle cx="1851.7" cy="560.9" r="5.5" class="dot"/><text x="1875.7" y="590.9" text-anchor="start" class="lbl">Singapore</text></g></svg><button class="replay" type="button">Replay</button></div></section>
-<p class="note">To see it in place at the end of the Advisory page: <a href="../advisory-map/" style="color:#7B2D28">Advisory, with the map</a>.</p>
+<path id="ir2" d="M1234.5,234.5 Q1408.5,266.0 1531.8,392.7" class="route" pathLength="1" style="--i:2"/>
+<path d="M-9,-7 L9,0 L-9,7 L-4,0 Z" class="arrow" style="--i:2;offset-path:path('M1234.5,234.5 Q1408.5,266.0 1531.8,392.7')"/>
+<path id="ir3" d="M1531.8,392.7 L1536.6,387.2" class="route" pathLength="1" style="--i:3"/>
+<path d="M-9,-7 L9,0 L-9,7 L-4,0 Z" class="arrow" style="--i:3;offset-path:path('M1531.8,392.7 L1536.6,387.2')"/>
+<path id="ir4" d="M1536.6,387.2 Q1721.9,423.6 1851.7,560.9" class="route" pathLength="1" style="--i:4"/>
+<path d="M-9,-7 L9,0 L-9,7 L-4,0 Z" class="arrow" style="--i:4;offset-path:path('M1536.6,387.2 Q1721.9,423.6 1851.7,560.9')"/>
+<g class="dest" style="--k:0"><circle cx="498.9" cy="322.5" r="26" class="glow" fill="url(#ig)"/><circle cx="498.9" cy="322.5" r="12" class="ripple"/><circle cx="498.9" cy="322.5" r="12" class="ring"/><circle cx="498.9" cy="322.5" r="5.5" class="dot"/><text x="498.9" y="292.5" text-anchor="middle" class="lbl">Los Angeles</text></g>
+<g class="dest" style="--k:1"><circle cx="1199.3" cy="197.0" r="26" class="glow" fill="url(#ig)"/><circle cx="1199.3" cy="197.0" r="12" class="ripple"/><circle cx="1199.3" cy="197.0" r="12" class="ring"/><circle cx="1199.3" cy="197.0" r="5.5" class="dot"/><text x="1177.3" y="183.0" text-anchor="end" class="lbl">London</text></g>
+<g class="dest" style="--k:2"><circle cx="1234.5" cy="234.5" r="26" class="glow" fill="url(#ig)"/><circle cx="1234.5" cy="234.5" r="12" class="ripple"/><circle cx="1234.5" cy="234.5" r="12" class="ring"/><circle cx="1234.5" cy="234.5" r="5.5" class="dot"/><text x="1258.5" y="264.5" text-anchor="start" class="lbl">Geneva</text></g>
+<g class="dest" style="--k:3"><circle cx="1531.8" cy="392.7" r="26" class="glow" fill="url(#ig)"/><circle cx="1531.8" cy="392.7" r="12" class="ripple"/><circle cx="1531.8" cy="392.7" r="12" class="ring"/><circle cx="1531.8" cy="392.7" r="5.5" class="dot"/><text x="1509.8" y="426.7" text-anchor="end" class="lbl">Abu Dhabi</text></g>
+<g class="dest" style="--k:4"><circle cx="1536.6" cy="387.2" r="26" class="glow" fill="url(#ig)"/><circle cx="1536.6" cy="387.2" r="12" class="ripple"/><circle cx="1536.6" cy="387.2" r="12" class="ring"/><circle cx="1536.6" cy="387.2" r="5.5" class="dot"/><text x="1560.6" y="371.2" text-anchor="start" class="lbl">Dubai</text></g>
+<g class="dest" style="--k:5"><circle cx="1851.7" cy="560.9" r="26" class="glow" fill="url(#ig)"/><circle cx="1851.7" cy="560.9" r="12" class="ripple"/><circle cx="1851.7" cy="560.9" r="12" class="ring"/><circle cx="1851.7" cy="560.9" r="5.5" class="dot"/><text x="1875.7" y="590.9" text-anchor="start" class="lbl">Singapore</text></g></svg><button class="replay" type="button">Replay</button></div></section>
+<p class="note">To see it in place at the top of the Advisory page: <a href="../advisory-map/" style="color:#7B2D28">Advisory, with the map</a>.</p>
 </div>
 <script>
 const frames=[...document.querySelectorAll('.frame')];
