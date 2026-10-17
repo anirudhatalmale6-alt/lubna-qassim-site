@@ -39,9 +39,10 @@
   var mb=document.getElementById('mapband');
   if(mb){var svg=mb.querySelector('svg');
     var startMap=function(){svg.classList.add('play');
-      if(matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+      if(matchMedia('(prefers-reduced-motion:reduce)').matches){mb.querySelectorAll('.cityseq li').forEach(function(li){li.classList.add('on');});return;}
       // arrows and glows are SVG (SMIL) animations: they run in Safari as well as Chrome
-      svg.querySelectorAll('animate,animateMotion').forEach(function(a){try{a.beginElementAt(+a.getAttribute('data-at'));}catch(e){}});};
+      svg.querySelectorAll('animate,animateMotion').forEach(function(a){try{a.beginElementAt(+a.getAttribute('data-at'));}catch(e){}});
+      mb.querySelectorAll('.cityseq li').forEach(function(li){setTimeout(function(){li.classList.add('on');},1000*(+li.getAttribute('data-at')));});};
     if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){startMap();io.disconnect();}});},{threshold:.3});io.observe(mb);}
     else startMap();}
 

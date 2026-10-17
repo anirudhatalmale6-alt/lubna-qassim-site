@@ -251,3 +251,48 @@ footer.foot{background:var(--dark);color:var(--on-dark);padding:36px var(--gut)}
 @media (min-width:861px) and (max-height:820px){
   .home h1{font-size:66px}.home .head{font-size:38px}.home .quote{font-size:28px}.home .adv{font-size:18px}
 }
+
+/* ===== Advisory brief of 17 Oct (2) ===== */
+.advisory .sub-strong{font-style:normal;font-weight:600;color:var(--acc);font-size:24px;line-height:1.35}
+.advisory .lede-strong{color:var(--ink);font-size:23px;line-height:1.55;font-weight:400;max-width:34em}
+/* the map carries the routes; the names sit beneath it as a quiet sequence that lights in step */
+.mapband .lbl{display:none}
+.cityseq{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.cityseq li{font:500 11.5px/1 var(--sans);letter-spacing:1.6px;text-transform:uppercase;color:var(--taupe);border:1px solid var(--rule);padding:10px 14px;transition:color .6s ease,border-color .6s ease,background .6s ease}
+.cityseq li.on{color:var(--acc);border-color:var(--acc);font-weight:600}
+.quoteblock{margin:64px auto 56px;max-width:860px;padding:0 0 0 28px;border-left:2px solid var(--acc)}
+.quoteblock blockquote{margin:0;font-family:var(--serif);font-style:italic;font-weight:500;font-size:31px;line-height:1.38;color:var(--acc);text-wrap:balance}
+.quoteblock figcaption{margin-top:20px;text-align:right;font-family:var(--serif);font-size:19px;font-weight:400;color:#6E675B;letter-spacing:.3px}
+.quoteblock figcaption::before{content:'— '}
+/* expandable areas */
+.areas{border-top:1px solid var(--rule)}
+details.area{display:block;padding:0;border-bottom:1px solid var(--rule)}
+details.area summary{list-style:none;display:grid;grid-template-columns:64px 1fr 40px;align-items:center;gap:20px;padding:28px 0;cursor:pointer}
+details.area summary::-webkit-details-marker{display:none}
+details.area .num{display:grid;place-items:center;width:52px;height:52px;border:1px solid var(--acc);color:var(--acc);font:600 14px/1 var(--sans);letter-spacing:1px;padding:0}
+details.area[open] .num{background:var(--acc);color:#fff}
+details.area summary h2{margin:0;font-size:30px}
+details.area summary:hover h2{color:var(--acc)}
+details.area .ind{position:relative;width:22px;height:22px;justify-self:end}
+details.area .ind::before,details.area .ind::after{content:'';position:absolute;left:0;right:0;top:50%;height:2px;background:var(--acc);transition:transform .25s ease}
+details.area .ind::after{transform:rotate(90deg)}
+details.area[open] .ind::after{transform:rotate(0)}
+details.area .body{padding:0 0 36px 84px;max-width:960px}
+/* one consistent reading face for intro, bullets and committee line */
+details.area .intro-line,details.area li{font-family:var(--serif);font-size:19px;line-height:1.6;color:var(--soft)}
+details.area .intro-line{color:var(--ink)}
+details.area li{padding:7px 0 7px 22px}
+details.area li::before{top:20px}
+details.area .committees{font-family:var(--serif);font-style:italic;font-size:18px;letter-spacing:0;text-transform:none;color:var(--soft);margin-top:14px}
+summary:focus-visible{outline:2px solid var(--acc);outline-offset:4px}
+@media (max-width:860px){
+  .advisory .sub-strong{font-size:20px}.advisory .lede-strong{font-size:19px}
+  .cityseq{gap:7px}.cityseq li{font-size:10px;letter-spacing:1px;padding:8px 10px}
+  .quoteblock{margin:44px 0 40px;padding-left:18px}.quoteblock blockquote{font-size:23px}
+  details.area summary{grid-template-columns:44px 1fr 24px;gap:14px;padding:22px 0}
+  details.area .num{width:40px;height:40px;font-size:12px}
+  details.area summary h2{font-size:22px;line-height:1.25}
+  details.area .body{padding:0 0 28px 0}
+  details.area .intro-line,details.area li{font-size:17.5px}
+}
+details.area[open] summary h2{color:var(--acc)}
