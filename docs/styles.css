@@ -416,3 +416,6 @@ details.area .committees{font-family:var(--serif);font-style:italic;font-weight:
 @media (max-width:860px){details.area .committees{font-size:18.5px}}
 .recphotos p.meta{font:500 11.5px/1.6 var(--sans)!important;letter-spacing:1.3px;text-transform:uppercase;color:var(--taupe)!important;margin-top:12px}
 .slider h3 a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}.slider h3 a:hover{border-bottom-color:#fff}
+.writing2 .feature .cover img{width:100%;max-width:260px}
+.videos{margin-top:56px;padding-top:40px;border-top:1px solid var(--rule)}
+.vcard h3{font-size:30px!important;line-height:1.2}@media (max-width:860px){.vcard h3{font-size:24px!important}}
