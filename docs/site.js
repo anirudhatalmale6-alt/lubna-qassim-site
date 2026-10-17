@@ -61,4 +61,19 @@
     f.src='https://www.youtube-nocookie.com/embed/'+b.getAttribute('data-yt')+'?autoplay=1&rel=0';
     f.title=b.getAttribute('aria-label');f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;
     b.replaceWith(f);});});
+
+  // video strip: advance one video every few seconds; stop as soon as the visitor interacts or plays
+  var vs=document.querySelector('.vstrip.moving');
+  if(vs && !matchMedia('(prefers-reduced-motion:reduce)').matches){
+    var stop=false, timer=setInterval(function(){
+      if(stop){clearInterval(timer);return;}
+      var card=vs.querySelector('.vcard'); if(!card) return;
+      var step=card.getBoundingClientRect().width+28;
+      if(vs.scrollLeft+vs.clientWidth>=vs.scrollWidth-4) vs.scrollTo({left:0,behavior:'smooth'});
+      else vs.scrollBy({left:step,behavior:'smooth'});
+    },4500);
+    ['pointerdown','wheel','touchstart','keydown'].forEach(function(ev){vs.addEventListener(ev,function(){stop=true;},{passive:true});});
+    vs.querySelectorAll('video').forEach(function(v){v.addEventListener('play',function(){stop=true;});});
+    vs.querySelectorAll('.vplay').forEach(function(b){b.addEventListener('click',function(){stop=true;});});
+  }
 })();

@@ -428,3 +428,7 @@ details.area .committees{font-family:var(--serif);font-style:italic;font-weight:
 .recvideo p.meta{font:500 11.5px/1.6 var(--sans);letter-spacing:1.3px;text-transform:uppercase;color:var(--taupe)}
 .recvideo .links{display:flex;gap:24px;flex-wrap:wrap;margin-top:18px}
 @media (max-width:860px){.recvideo{grid-template-columns:1fr;gap:24px}.recvideo p{font-size:18.5px}.vcard h3{font-size:21px!important}}
+/* video strip: glides from one video to the next; stops for good once the visitor touches it or plays a video */
+.vstrip.moving{overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:var(--pl);scrollbar-width:thin}
+.vstrip.moving .vtrack{animation:none}
+.vstrip .vcard{scroll-snap-align:start}
