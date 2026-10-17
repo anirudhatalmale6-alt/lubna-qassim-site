@@ -38,8 +38,12 @@
   // map: play once when it scrolls into view
   var mb=document.getElementById('mapband');
   if(mb){var svg=mb.querySelector('svg');
-    if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){svg.classList.add('play');io.disconnect();}});},{threshold:.3});io.observe(mb);}
-    else svg.classList.add('play');}
+    var startMap=function(){svg.classList.add('play');
+      if(matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+      // arrows and glows are SVG (SMIL) animations: they run in Safari as well as Chrome
+      svg.querySelectorAll('animate,animateMotion').forEach(function(a){try{a.beginElementAt(+a.getAttribute('data-at'));}catch(e){}});};
+    if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){startMap();io.disconnect();}});},{threshold:.3});io.observe(mb);}
+    else startMap();}
 
   // contact: preset the enquiry type from ?subject=, and a draft-only submit
   var form=document.getElementById('enquiry');
