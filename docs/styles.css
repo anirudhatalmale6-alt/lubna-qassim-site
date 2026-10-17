@@ -353,3 +353,65 @@ img{height:auto}
 @keyframes recslide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.recband .track{animation:none}.recband .slider{overflow-x:auto}}
 @media (max-width:860px){.pagehead .sub{font-size:21px}.pagehead .lede{font-size:19px}.recband .track{animation-duration:35s}}
+
+/* =====================================================================
+   ONE TYPOGRAPHIC SYSTEM FOR EVERY PAGE (17 Oct, her note: "the pages need to feel seamless")
+   Reading text  Newsreader 400 · 20px  · charcoal
+   Opening line  Newsreader 500 · 23px  · burgundy   (the Profile opening she likes)
+   Subtitle      Newsreader 600 · 26px  · burgundy
+   Section title Newsreader 600 · 34px  · ink        Card title Newsreader 600 · 24px · ink
+   Labels/meta   Montserrat 600 · 12px  · caps
+   ===================================================================== */
+:root{--read:#3A352D}
+body{font-weight:400}
+.prose p,.topic p,.offer p,details.area li,details.area .intro-line,.elist .d,.secintro,.bk .aff,.recphotos p,
+.closing p,.home .adv,.cites p,.book p,.latest p,.persp p,.band-dark .prose p{
+  font-family:var(--serif);font-weight:400;font-size:20px;line-height:1.65;color:var(--read)}
+.home .adv{font-family:var(--serif);font-size:21px}
+details.area .intro-line{color:var(--ink)}
+.prose p.big,.pagehead .lede,.speaking .prose.big,.statement,.profile .prose p.big{
+  font-family:var(--serif);font-weight:500;font-size:23px;line-height:1.55;color:var(--acc)!important}
+.profile .prose p.big + p{font-weight:500!important;color:var(--ink)!important;font-size:20px!important}
+.pagehead .sub,.advisory .sub-strong{font-family:var(--serif);font-style:normal;font-weight:600;font-size:26px;line-height:1.35;color:var(--acc)}
+.sechead h2,details.area summary h2,.closing h2,.recband h2{font-family:var(--serif);font-weight:600;font-size:34px;line-height:1.15}
+.topic h3,.offer h3,.bk h3,.recphotos h3,.vcard h3,.persp h3,.book h3,.writing2 .feature h3{font-family:var(--serif);font-weight:600;font-size:24px;line-height:1.3}
+.writing2 .feature h3{font-size:30px}
+.elist a.t{font-size:22px;font-weight:500}
+.closing p{color:inherit}
+.band-dark .prose p{color:var(--on-dark)}
+.band-dark .prose p.big{color:#E9C9C3!important}
+.advisory .closing p{color:rgba(246,238,230,.88)}
+@media (max-width:860px){
+  .prose p,.topic p,.offer p,details.area li,details.area .intro-line,.elist .d,.secintro,.bk .aff,.recphotos p,.closing p,.home .adv,.cites p,.book p,.band-dark .prose p{font-size:18.5px}
+  .prose p.big,.pagehead .lede,.speaking .prose.big,.statement,.profile .prose p.big{font-size:21px}
+  .profile .prose p.big + p{font-size:18.5px!important}
+  .pagehead .sub,.advisory .sub-strong{font-size:21px}
+  .sechead h2,details.area summary h2,.closing h2,.recband h2{font-size:27px}
+  .topic h3,.offer h3,.bk h3,.recphotos h3,.vcard h3{font-size:21px}
+  .elist a.t{font-size:19.5px}
+}
+/* Recognition page */
+.recphotos{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:64px}
+.recphotos figure{margin:0}
+.recphotos img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 30%}
+.recphotos figcaption{padding-top:20px}
+.recphotos h3{margin:0 0 10px}
+@media (max-width:860px){.recphotos{grid-template-columns:1fr;gap:44px;margin-top:44px}}
+/* Speaking: videos on a strip */
+.videos{margin-top:72px}
+.vstrip{overflow-x:auto;padding:0 var(--pl,var(--gut)) 10px;--pl:max(var(--gut),calc((100vw - var(--wrap))/2 + var(--gut)))}
+.vtrack{display:flex;gap:28px;width:max-content}
+.vstrip.moving{overflow:hidden}.vstrip.moving .vtrack{animation:recslide 60s linear infinite}
+.vstrip.moving:hover .vtrack{animation-play-state:paused}
+.vcard{margin:0;width:min(520px,82vw)}
+.vplay{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:0;background:#000;cursor:pointer;overflow:hidden}
+.vplay img{width:100%;height:100%;object-fit:cover;opacity:.92;transition:opacity .3s}
+.vplay:hover img{opacity:1}
+.vplay .pi{position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;background:rgba(133,67,61,.92)}
+.vplay .pi::after{content:'';position:absolute;left:27px;top:21px;border-left:20px solid #fff;border-top:13px solid transparent;border-bottom:13px solid transparent}
+.vcard iframe{display:block;width:100%;aspect-ratio:16/9;border:0}
+.vcard figcaption{padding-top:16px}.vcard h3{margin:0 0 6px}
+details.area .committees{font-family:var(--serif);font-style:italic;font-weight:400;font-size:20px;line-height:1.6;color:var(--read)}
+.slider p{font-family:var(--serif);font-size:17px;line-height:1.55;color:rgba(246,238,230,.88)}
+@media (max-width:860px){details.area .committees{font-size:18.5px}}
+.recphotos p.meta{font:500 11.5px/1.6 var(--sans)!important;letter-spacing:1.3px;text-transform:uppercase;color:var(--taupe)!important;margin-top:12px}

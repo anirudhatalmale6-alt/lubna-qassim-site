@@ -54,4 +54,11 @@
     form.addEventListener('submit',function(e){e.preventDefault();
       document.getElementById('formnote').textContent='Draft preview: in the finished site this sends your message to Lubna directly.';});
   }
+
+  // videos: the YouTube player loads only when the visitor presses play
+  document.querySelectorAll('.vplay').forEach(function(b){b.addEventListener('click',function(){
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/'+b.getAttribute('data-yt')+'?autoplay=1&rel=0';
+    f.title=b.getAttribute('aria-label');f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;
+    b.replaceWith(f);});});
 })();
