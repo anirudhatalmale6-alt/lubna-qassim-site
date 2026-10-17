@@ -333,3 +333,23 @@ details.area[open] summary h2{color:var(--acc)}
   .bks{grid-template-columns:1fr;gap:40px}
   .elist a.t{font-size:19.5px}
 }
+
+/* ===== 17-oct (4): one rule on every page — the subtitle and the opening words carry the burgundy ===== */
+img{height:auto}
+.pagehead .sub{font-style:normal;font-weight:600;color:var(--acc);font-size:26px;line-height:1.35}
+.pagehead .lede{color:var(--acc);font-weight:500;font-size:22px}
+.prose p.big{color:var(--acc);font-weight:500}
+.profile .prose p.big + p{color:var(--soft);font-size:inherit;line-height:inherit;font-weight:300}
+.speaking .prose.big{color:var(--acc)!important;font-weight:500}
+.statement{max-width:40em;font-size:21px;line-height:1.6;color:var(--acc);font-weight:500;margin:28px 0 0}
+.band-dark .prose p.big{color:#E9C9C3}
+/* photographs keep their own shape on phones (no tall crops) */
+.profile .figure img{max-height:560px;object-fit:cover}
+@media (max-width:860px){.profile .figure img{max-height:none}.speaking .ph img{max-height:none!important}}
+/* recognition: a slow, continuous slide, as on Sheikha Shamma's site; pauses on hover or touch */
+.recband .slider{overflow:hidden;scroll-snap-type:none;padding-left:0;padding-right:0}
+.recband .track{display:flex;gap:22px;width:max-content;animation:recslide 45s linear infinite;padding-left:var(--pl)}
+.recband .slider:hover .track,.recband .slider:active .track{animation-play-state:paused}
+@keyframes recslide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.recband .track{animation:none}.recband .slider{overflow-x:auto}}
+@media (max-width:860px){.pagehead .sub{font-size:21px}.pagehead .lede{font-size:19px}.recband .track{animation-duration:35s}}
