@@ -434,3 +434,43 @@ details.area .committees{font-family:var(--serif);font-style:italic;font-weight:
 .vstrip .vcard{scroll-snap-align:start}
 .selnote{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.6;color:var(--read);max-width:40em;margin:56px 0 8px}
 @media (max-width:860px){.selnote{font-size:18.5px;margin-top:40px}}
+
+/* ── 19 Oct: homepage hierarchy (identity, positioning, invitation; perspective after) ── */
+.home .cred{color:var(--acc);font-weight:600}
+.home .cred2{font:500 11.5px/1.7 var(--sans);letter-spacing:1.2px;text-transform:uppercase;color:var(--taupe,#898171);margin:6px 0 0}
+.home .adv{margin-bottom:28px}
+.home .perspective{max-width:1000px;margin:0 auto;padding:64px var(--gut) 84px;text-align:center;border-top:1px solid var(--rule)}
+.home .perspective .label{margin:0 0 18px;color:var(--taupe,#898171)}
+.home .perspective blockquote{margin:0 auto;max-width:24em;font-family:var(--serif);font-style:italic;font-weight:500;font-size:33px;line-height:1.32;color:var(--acc);text-wrap:balance}
+@media (max-width:860px){
+  .home .ph{height:42vh}
+  .home .cred2{font-size:10px;letter-spacing:.7px}
+  .home .perspective{padding:44px var(--gut) 56px}
+  .home .perspective blockquote{font-size:24px}
+}
+/* quieter footer: name + three text links */
+footer.foot{padding:30px var(--gut)}
+.foot small{margin-top:14px}
+
+/* Profile side photo in black and white (distinct from the colour homepage portrait) */
+.figure.bw img{filter:grayscale(1) contrast(1.04)}
+
+/* Speaking: Helsinki photo */
+.helsinki{display:grid;grid-template-columns:minmax(0,380px) 1fr;gap:44px;align-items:center;margin:64px 0 8px}
+.helsinki img{width:100%;max-height:500px;object-fit:cover;object-position:50% 30%}
+.helsinki .label{margin:0 0 14px}
+.helsinki blockquote{margin:0 0 18px;font-family:var(--serif);font-style:italic;font-weight:500;font-size:27px;line-height:1.35;color:var(--acc);text-wrap:balance}
+.helsinki .hcap{text-transform:none;letter-spacing:0;margin:0;font-family:var(--serif);font-size:19px;line-height:1.6;color:var(--read,#3A352D)}
+@media (max-width:860px){.helsinki{grid-template-columns:1fr;gap:22px;margin-top:44px}.helsinki img{max-height:420px}.helsinki blockquote{font-size:22px}.helsinki .hcap{text-transform:none;letter-spacing:0;font-size:17.5px}}
+
+/* Speaking: what audiences say (no names, sliding like a news line, pauses on hover) */
+.remarks{padding:72px 0 64px;overflow:hidden}
+.remarks .label{margin:0 0 24px}
+.rslider{overflow:hidden}
+.rtrack{display:flex;gap:22px;width:max-content;animation:recslide 80s linear infinite;padding-left:var(--gut)}
+.rslider:hover .rtrack,.rslider:active .rtrack{animation-play-state:paused}
+.remark{flex:0 0 380px;margin:0;background:#FBF8F2;border:1px solid var(--rule);border-top:2px solid var(--acc);padding:28px 28px 24px;display:flex;flex-direction:column;justify-content:space-between}
+.remark blockquote{margin:0 0 20px;font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.5;color:var(--ink)}
+.remark figcaption{font:600 11px/1.5 var(--sans);letter-spacing:1.2px;text-transform:uppercase;color:var(--acc)}
+@media (prefers-reduced-motion:reduce){.rtrack{animation:none}.rslider{overflow-x:auto}}
+@media (max-width:860px){.remark{flex-basis:290px;padding:22px}.remark blockquote{font-size:18px}.rtrack{animation-duration:65s}.remarks{padding:52px 0 44px}}
