@@ -483,3 +483,15 @@ footer.foot{padding:30px var(--gut)}
 @media (max-width:860px){.home .perspective .ctas{flex-direction:column;gap:22px;margin-top:32px}}
 /* initials under each remark */
 .remark figcaption{letter-spacing:2px}
+
+/* 19 Oct (3): Perspective quote, one sentence per block, small signature, even spacing */
+.home .perspective{padding:64px var(--gut) 72px}
+.home .perspective .label{margin:0 0 26px}
+.home .perspective .pq{margin:0}
+.home .perspective blockquote{max-width:30em}
+.home .perspective blockquote span{display:block;text-wrap:balance}
+.home .perspective blockquote span+span{margin-top:.15em}
+.home .perspective figcaption{margin-top:22px;font-family:var(--serif);font-size:18px;letter-spacing:.4px;color:#6E675B}
+.home .perspective .ctas{margin-top:40px}
+@media (max-width:860px){.home .perspective{padding:48px var(--gut) 56px}.home .perspective .label{margin-bottom:20px}.home .perspective figcaption{font-size:16px;margin-top:18px}.home .perspective .ctas{margin-top:32px}}
+@media (min-width:1100px){.home .perspective{max-width:1240px}.home .perspective blockquote{max-width:none;font-size:30px}.home .perspective blockquote span{white-space:nowrap}}
