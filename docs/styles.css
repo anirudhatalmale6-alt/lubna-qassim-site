@@ -432,3 +432,5 @@ details.area .committees{font-family:var(--serif);font-style:italic;font-weight:
 .vstrip.moving{overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:var(--pl);scrollbar-width:thin}
 .vstrip.moving .vtrack{animation:none}
 .vstrip .vcard{scroll-snap-align:start}
+.selnote{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.6;color:var(--read);max-width:40em;margin:56px 0 8px}
+@media (max-width:860px){.selnote{font-size:18.5px;margin-top:40px}}
