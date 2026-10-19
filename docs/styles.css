@@ -474,3 +474,12 @@ footer.foot{padding:30px var(--gut)}
 .remark figcaption{font:600 11px/1.5 var(--sans);letter-spacing:1.2px;text-transform:uppercase;color:var(--acc)}
 @media (prefers-reduced-motion:reduce){.rtrack{animation:none}.rslider{overflow-x:auto}}
 @media (max-width:860px){.remark{flex-basis:290px;padding:22px}.remark blockquote{font-size:18px}.rtrack{animation-duration:65s}.remarks{padding:52px 0 44px}}
+
+/* 19 Oct (2): both credential lines in the same burgundy; the second stays a touch lighter and smaller */
+.home .cred2{color:var(--acc);font-weight:500}
+/* buttons now close the Perspective section */
+.home .perspective .ctas{justify-content:center;margin-top:40px}
+.home .perspective{padding-bottom:76px}
+@media (max-width:860px){.home .perspective .ctas{flex-direction:column;gap:22px;margin-top:32px}}
+/* initials under each remark */
+.remark figcaption{letter-spacing:2px}
